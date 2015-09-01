@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>O2 Studio</title>
+ 	<%= favicon_link_tag "/favicon.ico?1" %>
+  	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="lAn2c2BNf9-Ps6C8AJEc-51nRDBTLvHEUYVxh0EEJTM" />
+
+</head>
+<body>
+
+	<div class="notice"><%= notice %></div>
+	<div class="alert"><%= alert %></div>
+
+
+
+
+<%= yield %>
+
+</body>
+</html>
