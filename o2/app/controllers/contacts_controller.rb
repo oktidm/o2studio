@@ -5,6 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all
+    @contact = Contact.new
   end
 
   # GET /contacts/1
@@ -14,7 +15,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
+    @contact = Contact.new(contact_params)
   end
 
   # GET /contacts/1/edit
@@ -28,7 +29,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Gracias, te contactamos pronto' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }

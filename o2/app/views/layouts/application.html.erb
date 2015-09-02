@@ -3,6 +3,7 @@
 <head>
   <title>O2 Studio</title>
  	<%= favicon_link_tag "/favicon.ico?1" %>
+ 	
   	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
@@ -10,13 +11,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="google-site-verification" content="lAn2c2BNf9-Ps6C8AJEc-51nRDBTLvHEUYVxh0EEJTM" />
 
+	<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?3HpSJEcDCWmjrKcpWGRf6d0eqGjjrCe0";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
+
 </head>
 <body>
 
 	<div class="notice"><%= notice %></div>
 	<div class="alert"><%= alert %></div>
-
-
 
 
 <%= yield %>

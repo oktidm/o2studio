@@ -1,33 +1,56 @@
-<%= form_for(@contact) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+            <div class="row">
+                <div class="col-lg-12">
+                    <%= form_for(@contact) do |f| %>
+                    <% if @contact.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+                <ul>
+                    <% @contact.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+                  </div>
+                <% end %>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                  <div class="field">
+                                  <%= f.text_field :name, placeholder: "Tu nombre", class: "form-control" %>
+                                  </div>
+                                  <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                  <div class="field">
+                                    <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
+                                  </div>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                <div class="field">
+                                    <%= f.text_field :phone,  placeholder: "Teléfono", class: "form-control"%>
+                                </div>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="field">
+                              
+                            </div>
+  
+                            <div class="form-group">
+                              <%= f.text_area :message, placeholder: "Mensaje", class: "form-control" %>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+<!--                            <div class="clearfix"></div>
+                            <div class="actions">
+                                <%= f.submit %>
+                            </div> -->
+                            <div class="col-lg-12 text-center">
+                                <div id="success"  class=""></div>
+                                <%= f.submit "Enviar", class: "btn btn-xl"%>
+                                <% end %>
+                            </div>
+                        </div>
+                </div>
+            </div>
